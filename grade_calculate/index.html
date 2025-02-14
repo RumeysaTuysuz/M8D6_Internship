@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midterm Final Calculation</title>
+    <title>Student Grades Application</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2 class="text-center">Midterm Final Grade Entry</h2>
-
-        <form action="" id="form" method="get">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name">
-
-            <label for="number">Number</label>
-            <input type="text" id="number" name="number" placeholder="Number">
-
-            <label for="midterm">Midterm Grade (0-100)</label>
-            <input type="number" id="midterm" name="midterm" placeholder="Midterm Grade">
-
-            <label for="final">Final Grade (0-100)</label>
-            <input type="number" id="final" name="final" placeholder="Final Grade">
-
-            <button type="submit">Save</button>
-            <button type="button" onclick="show()">Show</button>
+        <h1>Student Grades</h1>
+        
+        <!-- Input Form -->
+        <form id="studentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="number">Student Number:</label>
+            <input type="text" id="number" required>
+            
+            <label for="midterm">Midterm Grade:</label>
+            <input type="number" id="midterm" required>
+            
+            <label for="final">Final Grade:</label>
+            <input type="number" id="final" required>
+            
+            <button type="submit">Add Student</button>
         </form>
 
-        <div id="alertBox" class="alert" style="display: none;">
-            <span class="closebtn" onclick="closeAlert()">&times;</span>
-            <span id="alertMessage"></span>
-            <span id="countdown"></span>
-        </div>
+        <!-- Button to toggle table visibility -->
+        <button id="toggleTableBtn">Show/Hide Table</button>
 
-        <table id="studentTable" style="display:none;">
+        <!-- Table to display student grades -->
+        <table id="studentTable" style="display: none;">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Number</th>
+                    <th>Student Number</th>
                     <th>Midterm</th>
                     <th>Final</th>
                     <th>Average</th>
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="studentTableBody">
+                <!-- Rows will be dynamically inserted here -->
+            </tbody>
         </table>
     </div>
+
+    <!-- Success/Error Alert -->
+    <div id="alertBox" class="alert"></div>
 
     <script src="script.js"></script>
 </body>
