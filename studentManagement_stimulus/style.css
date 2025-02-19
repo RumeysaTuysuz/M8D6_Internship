@@ -1,0 +1,155 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Container */
+[data-controller="student"] {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Show Table Button */
+button[data-action="click->student#showTable"] {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+button[data-action="click->student#showTable"]:hover {
+    background-color: #1e88e5;
+}
+
+/* Alert Box */
+.alert-box {
+    opacity: 0;
+    transition: opacity 0.5s;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-box.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.alert-box.error {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Table Styling */
+#studentTable {
+    width: 100%;
+    border-collapse: collapse;
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+}
+
+#studentTable th, #studentTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#studentTable th {
+    background-color: #f4f4f4;
+}
+
+#studentTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Action Buttons */
+#studentTable button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#studentTable button:hover {
+    background-color: #da190b;
+}
+
+/* Table No Data Found */
+#studentTable tbody {
+    text-align: center;
+}
+
+#studentTable tbody tr {
+    background-color: #fff;
+}
+
+#studentTable tbody td {
+    padding: 15px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Hover Effects */
+#studentTable button:hover {
+    background-color: #da190b;
+}
+
+#studentTable tr:hover {
+    background-color: #f1f1f1;
+}

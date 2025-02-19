@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harcama Takip Uygulaması</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script type="module">
+        import { Application } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js";
+        import ExpenseController from "./controllers/expense_controller.js";
+
+        window.Stimulus = Application.start();
+        Stimulus.register("expense", ExpenseController);
+    </script>
+</head>
+<body data-controller="expense">
+
+    <div class="container">
+        <h2>Harcama Takip Uygulaması</h2>
+
+        <form data-action="submit->expense#addExpense">
+            <label for="description">Açıklama:</label>
+            <input type="text" id="description" name="description" required> <br><br>
+
+            <label for="amount">Tutar (₺):</label>
+            <input type="number" id="amount" name="amount" required> <br><br>
+
+            <button type="submit" class="btn">Ekle</button>
+        </form>
+
+        <button class="btn show-btn" data-action="click->expense#toggleList">Harcama Listesini Göster</button>
+
+        <div id="expense-section" class="hidden">
+            <h3>Harcama Listesi:</h3>
+            <ul id="expense-list"></ul>
+
+            <h3>Toplam Harcama: <span id="total">0</span> ₺</h3>
+        </div>
+    </div>
+
+</body>
+</html>

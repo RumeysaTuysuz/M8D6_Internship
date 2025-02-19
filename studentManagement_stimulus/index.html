@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div data-controller="student">
+        <form data-action="submit->student#addStudent">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="number" placeholder="Student Number">
+            <input type="number" id="midterm" placeholder="Midterm Grade">
+            <input type="number" id="final" placeholder="Final Grade">
+            <button type="submit">Add Student</button>
+        </form>
+
+        <button data-action="click->student#showTable">Show Table</button>
+
+        <div data-target="student.alertBox" class="alert-box"></div>
+
+        <table id="studentTable" data-target="student.studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Midterm</th>
+                    <th>Final</th>
+                    <th>Average</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody data-target="student.tableBody"></tbody>
+        </table>
+    </div>
+
+    <script src="https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"></script>
+    <script type="module" src="controller/student_controller.js"></script>
+</body>
+</html>

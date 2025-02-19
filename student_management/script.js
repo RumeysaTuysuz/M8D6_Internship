@@ -58,7 +58,7 @@ document.getElementById('studentForm').addEventListener('submit', (e) => {
 
     if (name && number && !isNaN(midterm) && !isNaN(final)) {
         // Create new student object
-        const student = { name, number, midterm, final };
+        const student = { name, number, midterm, final };   
         students.push(student);
 
         // Save to localStorage
