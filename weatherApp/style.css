@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+#weather-info {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.chart-container {
+    width: 80%; 
+    height: 400px; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+#noteSection {
+    margin-top: 20px;
+}
+
+#weatherNote {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#saveNoteButton {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#saveNoteButton:hover {
+    background-color: #45a049;
+}
+
+
+

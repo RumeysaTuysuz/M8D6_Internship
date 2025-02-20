@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <script type="module" src="https://unpkg.com/@hotwired/stimulus/dist/stimulus.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="temperatureChart" width="400" height="200"></canvas>
+
+    <script type="module">
+        import { Application } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js";
+        import WeatherController from "/weather_controller.js";
+
+        window.Stimulus = Application.start();
+        Stimulus.register("weather", WeatherController);
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #weather-info { display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9; }
+        input { padding: 5px; margin: 10px; width: 200px; }
+        button { padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Hava Durumu Uygulaması</h1>
+    
+    <div data-controller="weather">
+        <input type="text" data-weather-target="cityInput" placeholder="Şehir adını girin...">
+        <button data-action="click->weather#searchWeather">Hava Durumunu Göster</button>
+
+        <div id="weather-info" data-weather-target="weatherInfo">
+            <h2 data-weather-target="cityName"></h2>
+            <p><strong>Sıcaklık:</strong> <span data-weather-target="temperature"></span></p>
+            <p><strong>Nem:</strong> <span data-weather-target="humidity"></span></p>
+            <p><strong>Rüzgar:</strong> <span data-weather-target="wind"></span></p>
+            <p><strong>Durum:</strong> <span data-weather-target="condition"></span></p>
+            
+        </div>
+    </div>
+</body>
+</html>
